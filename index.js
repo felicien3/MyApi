@@ -33,7 +33,6 @@ app.post('/login', (req, res) => {
 
   db.query('SELECT * FROM users WHERE username = ?', [username], async (err, results) => {
     if (err || results.length === 0) return res.status(400).json({ error: 'User not found' });
-
     const user = results[0];
     const validPass = await bcrypt.compare(password, user.password);
     if (!validPass) return res.status(400).json({ error: 'Invalid password' });
