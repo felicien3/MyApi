@@ -7,7 +7,7 @@ const auth = require('./middleware/auth');
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
 const secret = process.env.SECRET_KEY;
 
 app.use(express.json());
